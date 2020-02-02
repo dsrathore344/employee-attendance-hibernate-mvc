@@ -1,33 +1,29 @@
 package com.mphasis.dao;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 
-import com.mphasis.bean.Employee;
+import com.mphasis.bean.CheckInOutTime;
 
 @Repository
-public class EmployeeDaoImpl {
+public class TimeDaoImpl {
 	
 	@Autowired
 	private SessionFactory factory;
 	
-	//Add Employee
-	public void addEmployee(Employee emp) {
+	//Check in time
+	public void checkInTime(CheckInOutTime checkInOutTime) {
 		Session session = factory.getCurrentSession();
 		session.getTransaction().begin();
-		session.save(emp);
+		session.save(checkInOutTime);
 		session.getTransaction().commit();
 		session.close();
 	}
 	
 	//list employee
-	public List<Employee> listEmployees(){
+	/*public List<Employee> listEmployees(){
 		Session session = factory.getCurrentSession();
 		session.getTransaction().begin();
 		List<Employee> empList = session.createQuery("from Employee").list();
@@ -65,5 +61,5 @@ public class EmployeeDaoImpl {
 		session.update(emp);
 		session.getTransaction().commit();
 		session.close();
-	}
+	}*/
 }
