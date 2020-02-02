@@ -7,17 +7,12 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h1>Employee Management</h1>
-	<hr>
-	<a href="enterDetails">Click to Add Employee</a>
-	<br><br>
-	<a href="listDetails">See the list of Employee</a>
+	<h2>Enter Employee Id</h2>
 	<br><br>
 	
-	<h5>Or</h5>
-	<form action="empById" method="get">
+	<form action="addEmpId" method="get">
 		Enter Employee ID: <input type="text" name="empId">
-		<input type="submit" value="Submit">
+		<input type="submit" value="Login">
 	</form>
 </body>
 </html>

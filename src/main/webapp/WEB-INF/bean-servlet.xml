@@ -50,14 +50,15 @@
 		<property name="dataSource" ref="dataSource" />
 		<property name="annotatedClasses">
 			<list>
-				<value>com.mphasis.bean.Employee</value>
+				<value>com.mphasis.bean.CheckInOutTime</value>
 			</list>
 		</property>
 		<property name="hibernateProperties">
 			<props>
-				<prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
+				<prop key="hibernate.dialect">org.hibernate.dialect.MySQL55Dialect</prop>
 				<prop key="hibernate.current_session_context_class">thread</prop>
 				<prop key="hibernate.show_sql">false</prop>
+				<prop key="hibernate.hbm2ddl.auto">create</prop>
 			</props>
 		</property>
 	</bean>
@@ -65,10 +66,14 @@
 	<!-- <bean id="empDaoImp" class="com.mphasis.dao.EmployeeDaoImpl">
 		<property name="sessionFactory" ref="hibernate5AnnotatedSessionFactory"/>
 	</bean> -->
-	<bean id="employeeDaoImpl" class="com.mphasis.dao.EmployeeDaoImpl">
-		<!-- <property name="sessionFactory" ref="hibernate5AnnotatedSessionFactory"/> -->
-	</bean>
+	
+	<bean id="timeController" class="com.mphasis.controller.TimeController"></bean>
 
+	<bean id="timeDaoImpl" class="com.mphasis.dao.TimeDaoImpl"></bean>
+	
+	
+	<bean id="utilityService" class="com.mphasis.service.UtilityService"></bean>
+	
 </beans>
 
 
